@@ -1,0 +1,25 @@
+{
+  "name": "second_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omid7600/Second_Automation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omid7600/Second_Automation/issues"
+  },
+  "homepage": "https://github.com/omid7600/Second_Automation#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "cypress": "^11.2.0",
+    "cypress-xpath": "^2.0.1"
+  }
+}
