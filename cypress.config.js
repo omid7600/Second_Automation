@@ -7,5 +7,6 @@ module.exports = defineConfig({
     },
     baseUrl:"https://www.home24.ch/",
     chromeWebSecurity:false,
+    defaultCommandTimeout : 8000,
   },
 });
