@@ -5,7 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl:"https://www.home24.ch/",
+    baseUrl:"https://www.home24.de/",
     chromeWebSecurity:false,
     defaultCommandTimeout : 8000,
   },

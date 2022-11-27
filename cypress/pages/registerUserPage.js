@@ -2,16 +2,30 @@ require('cypress-xpath');
 
 class registerUserPage {
     elements = {
-        salutation:()=>cy.xpath('//input[@id="radio-input-1"]'),
-        firstNameInput:()=>cy.xpath('//input[@id="radio-input-1"]'),
-        sureNameInput:()=>cy.xpath('//input[@id="input-5"]'),
-        emailAddressInput:()=>cy.xpath('//input[@id="input-6"]'),
-        passwordInput:()=>cy.xpath('Password://input[@id="input-7"]'),
-        clickCheckBox:()=>cy.xpath('//input[@id="checkbox-8"]'),
-        clickSubmitButton:()=>cy.xpath('button[@class="css-1bxciiq"]'),
+        salutationFrau:()=>cy.get('#radio-input-1'),
+        salutationHerr:()=>cy.get('#radio-input-2'),
+        salutationNeutrale:()=>cy.get('#radio-input-3'),
+        firstNameInput:()=>cy.get('#input-4'),
+        sureNameInput:()=>cy.get('#input-5'),
+        emailAddressInput:()=>cy.get('#input-6'),
+        passwordInput:()=>cy.get('#input-7'),
+        CheckBoxRuleAccept:()=>cy.get('[data-testid="checkbox-label-text"]'),
+        SubmitButton:()=>cy.xpath('//button[@type="submit"]').eq(1) ,
     }
     clickSalutation(gender) {
-        this.elements.salutation().click(gender);
+        switch(gender) {
+            case "male":
+                this.elements.salutationFrau().click({ force: true });
+                break;
+            case "female":
+                this.elements.salutationHerr().click({ force: true });
+                break;
+            case "neutral":
+                this.elements.salutationNeutrale().click({ force: true });
+                break;
+            default:
+            console.error("the salutation is unknown")
+        }
     }
     typeFirstName(firstname) {
         this.elements.firstNameInput().type(firstname);
@@ -25,11 +39,11 @@ class registerUserPage {
     typePasswordInput(password) {
         this.elements.passwordInput().type(password);
     }
-    cliskChekBox() {
-        this.elements.clickCheckBox().click()
+    clickCheckBox() {
+        this.elements.CheckBoxRuleAccept().click()
     }
     clickSubmitButton() {
-        this.elements.clickSubmitButton().click();
+        this.elements.SubmitButton().click();
     }
 }
 module.exports = new registerUserPage();
