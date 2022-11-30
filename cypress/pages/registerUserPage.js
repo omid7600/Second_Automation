@@ -10,7 +10,9 @@ class registerUserPage {
         emailAddressInput:()=>cy.get('#input-6'),
         passwordInput:()=>cy.get('#input-7'),
         CheckBoxRuleAccept:()=>cy.get('[data-testid="checkbox-label-text"]'),
-        SubmitButton:()=>cy.xpath('//button[@type="submit"]').eq(1) ,
+        SubmitButton:()=>cy.xpath('//button[@type="submit"]').eq(1),
+        registerErrorDuplicateUser:()=>cy.get('.css-tw8q33'),
+        registerErrorEmail:()=>cy.xpath('//*[text()="Die E-Mail-Adresse ist ungültig. Bitte überprüfe die Eingabe."]'),
     }
     clickSalutation(gender) {
         switch(gender) {
