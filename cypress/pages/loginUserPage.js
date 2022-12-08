@@ -17,6 +17,9 @@ class loginUserPage {
     ClickLoginPageSubmit() {
         this.elements.loginPageSubmit().click();
     }
+    GetloginPageError() {
+        return this.elements.loginPageError();
+    }
 
 }
 
